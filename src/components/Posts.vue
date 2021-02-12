@@ -1,7 +1,10 @@
 <template>
   <div id="posts">
     <table>
-      <tr v-for="post in this.result" v-bind:key="post.id">
+      <tr
+        v-for="post in this.result"
+        v-bind:key="post.id"
+      >
         <td>
           {{ post.userId }}
         </td>

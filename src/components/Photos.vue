@@ -1,7 +1,10 @@
 <template>
   <div id="photos">
     <table>
-      <tr v-for="photo in result" v-bind:key="photo.id">
+      <tr
+        v-for="photo in result"
+        v-bind:key="photo.id"
+      >
         <td>
           <img v-bind:src=photo.thumbnailUrl>
         </td>
