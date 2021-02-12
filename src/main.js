@@ -32,4 +32,4 @@ const vue = new Vue({
   },
 });
 
-vue();
+vue.$mount();
