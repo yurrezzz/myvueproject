@@ -2,7 +2,7 @@
   <div id="posts">
     <table>
       <tr
-        v-for="post in this.result"
+        v-for="post in this.posts"
         v-bind:key="post.id"
       >
         <td>
@@ -22,19 +22,19 @@ export default {
 
   data() {
     return {
-      result: null,
+      posts: null,
     };
   },
 
   methods: {
-    async getData() {
-      const response = await fetch('https://jsonplaceholder.typicode.com/posts');
-      this.result = await response.json();
+    async getPosts() {
+      const posts = await fetch('https://jsonplaceholder.typicode.com/posts');
+      this.posts = await posts.json();
     },
   },
 
   mounted() {
-    this.getData();
+    this.getPosts();
   },
 };
 </script>

@@ -2,7 +2,7 @@
   <div id="photos">
     <table>
       <tr
-        v-for="photo in result"
+        v-for="photo in photos"
         v-bind:key="photo.id"
       >
         <td>
@@ -22,19 +22,19 @@ export default {
 
   data() {
     return {
-      result: null,
+      photos: null,
     };
   },
 
   methods: {
-    async getData() {
-      const response = await fetch('https://jsonplaceholder.typicode.com/photos');
-      this.result = await response.json();
+    async getPhotos() {
+      const photos = await fetch('https://jsonplaceholder.typicode.com/photos');
+      this.photos = await photos.json();
     },
   },
 
   mounted() {
-    this.getData();
+    this.getPhotos('https://jsonplaceholder.typicode.com/photos');
   },
 };
 </script>
