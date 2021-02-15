@@ -4,11 +4,11 @@ import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
 const Photos = () => import(
-  '../components/Photos.vue',
+  '../components/Photos',
 );
 
 const Posts = () => import(
-  '../components/Posts.vue',
+  '../components/Posts',
 );
 
 const routes = [
