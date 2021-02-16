@@ -3,6 +3,10 @@ import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 
+const NotFound = () => import(
+  '../components/NotFound',
+);
+
 const Photos = () => import(
   '../components/Photos',
 );
@@ -12,6 +16,10 @@ const Posts = () => import(
 );
 
 const routes = [
+  {
+    path: '*',
+    component: NotFound,
+  },
   {
     path: '/photos',
     component: Photos,

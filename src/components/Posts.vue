@@ -17,6 +17,8 @@
 </template>
 
 <script>
+import url from '../constants/constants';
+
 export default {
   name: 'Posts',
 
@@ -28,7 +30,7 @@ export default {
 
   methods: {
     async getPosts() {
-      const posts = await fetch('https://jsonplaceholder.typicode.com/posts');
+      const posts = await fetch(url.posts);
       this.posts = await posts.json();
     },
   },
@@ -40,15 +42,6 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
 table {
   width: 700px;
   border: 1px solid aqua;
@@ -60,5 +53,4 @@ td {
   text-align: center;
   background-color: bisque;
 }
-
 </style>

@@ -17,6 +17,8 @@
 </template>
 
 <script>
+import url from '../constants/constants';
+
 export default {
   name: 'Photos',
 
@@ -34,7 +36,7 @@ export default {
   },
 
   mounted() {
-    this.getPhotos('https://jsonplaceholder.typicode.com/photos');
+    this.getPhotos(url.photos);
   },
 };
 </script>
