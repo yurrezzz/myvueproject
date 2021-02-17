@@ -2,7 +2,7 @@
   <div id="photos">
     <table>
       <tr
-        v-for="photo in photos"
+        v-for="photo in this.$store.state.photos"
         v-bind:key="photo.id"
       >
         <td>
@@ -22,16 +22,10 @@ import url from '../constants/constants';
 export default {
   name: 'Photos',
 
-  data() {
-    return {
-      photos: null,
-    };
-  },
-
   methods: {
     async getPhotos() {
       const photos = await fetch('https://jsonplaceholder.typicode.com/photos');
-      this.photos = await photos.json();
+      this.$store.state.photos = await photos.json();
     },
   },
 

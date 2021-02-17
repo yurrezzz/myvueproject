@@ -2,7 +2,7 @@
   <div id="posts">
     <table>
       <tr
-        v-for="post in this.posts"
+        v-for="post in this.$store.state.posts"
         v-bind:key="post.id"
       >
         <td>
@@ -22,16 +22,10 @@ import url from '../constants/constants';
 export default {
   name: 'Posts',
 
-  data() {
-    return {
-      posts: null,
-    };
-  },
-
   methods: {
     async getPosts() {
       const posts = await fetch(url.posts);
-      this.posts = await posts.json();
+      this.$store.state.posts = await posts.json();
     },
   },
 
